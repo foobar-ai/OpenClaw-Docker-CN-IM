@@ -127,6 +127,9 @@ docker run -d \
   -e MODEL_ID=model id \
   -e BASE_URL=http://xxxxx/v1 \
   -e API_KEY=123456 \
+  -e API_PROTOCOL=openai-completions \
+  -e CONTEXT_WINDOW=200000 \
+  -e MAX_TOKENS=8192 \
   -e FEISHU_APP_ID=your-app-id \
   -e FEISHU_APP_SECRET=your-app-secret \
   -e DINGTALK_CLIENT_ID=your-dingtalk-client-id \
@@ -146,7 +149,7 @@ docker run -d \
   -p 18789:18789 \
   -p 18790:18790 \
   --restart unless-stopped \
-  openclaw:local
+  justlikemaki/openclaw-docker-cn-im:latest
 ```
 
 ### 方式 2：使用 Docker Compose（推荐）
