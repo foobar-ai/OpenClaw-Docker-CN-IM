@@ -96,6 +96,8 @@ docker-compose down
 
 本项目支持 **OpenAI 协议**和 **Claude 协议**两种 API 格式。
 
+> 💡 **推荐模型**：推荐使用 `gemini-3-flash-preview` 模型，该模型具有超大上下文窗口（1M tokens）、快速响应速度和优秀的性价比，非常适合作为 OpenClaw 的后端模型。
+
 #### 基础配置参数
 
 | 参数 | 说明 | 默认值 |

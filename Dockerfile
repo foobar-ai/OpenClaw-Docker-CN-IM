@@ -12,6 +12,7 @@ RUN apt-get update \
     chromium \
     curl \
     fonts-liberation \
+    fonts-noto-cjk \
     fonts-noto-color-emoji \
     git \
     gosu \
@@ -29,7 +30,13 @@ RUN npm install -g npm@latest
 RUN npm install -g openclaw@latest opencode-ai@latest
 
 # 安装 Playwright 和 Chromium
-RUN npm install -g playwright && npx playwright install chromium
+RUN npm install -g playwright && npx playwright install chromium --with-deps
+
+# 安装 playwright-extra 和 puppeteer-extra-plugin-stealth
+RUN npm install -g playwright-extra puppeteer-extra-plugin-stealth
+
+# 安装 bird
+RUN npm install -g @steipete/bird
 
 # 创建配置目录并设置权限
 RUN mkdir -p /home/node/.openclaw/workspace && \
