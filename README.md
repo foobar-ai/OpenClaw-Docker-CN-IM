@@ -144,7 +144,7 @@ MAX_TOKENS=8192
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
-| `OPENCLAW_GATEWAY_TOKEN` | Gateway 访问令牌 | `7788414` |
+| `OPENCLAW_GATEWAY_TOKEN` | Gateway 访问令牌 | `123456` |
 | `OPENCLAW_GATEWAY_BIND` | 绑定地址 | `lan` |
 | `OPENCLAW_GATEWAY_PORT` | Gateway 端口 | `18789` |
 | `OPENCLAW_BRIDGE_PORT` | Bridge 端口 | `18790` |
@@ -473,7 +473,7 @@ docker run -d \
   -e QQBOT_CLIENT_SECRET=your-qqbot-client-secret \
   -e WECOM_TOKEN=your-token \
   -e WECOM_ENCODING_AES_KEY=your-aes-key \
-  -e OPENCLAW_GATEWAY_TOKEN=7788414 \
+  -e OPENCLAW_GATEWAY_TOKEN=123456 \
   -e OPENCLAW_GATEWAY_BIND=lan \
   -e OPENCLAW_GATEWAY_PORT=18789 \
   -v ~/.openclaw:/home/node/.openclaw \
