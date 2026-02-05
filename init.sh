@@ -46,6 +46,12 @@ if [ ! -f /home/node/.openclaw/openclaw.json ]; then
   "update": {
     "checkOnStart": false
   },
+  "browser": {
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw",
+    "executablePath": "/usr/bin/chromium"
+  },
   "models": {
     "mode": "merge",
     "providers": {
