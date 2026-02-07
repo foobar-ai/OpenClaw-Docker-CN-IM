@@ -52,7 +52,7 @@ RUN mkdir -p /home/node/.openclaw/agents/main/sessions && \
 USER node
 
 # 安装飞书插件 - 使用 timeout 防止卡住，忽略错误继续构建
-# RUN timeout 300 openclaw plugins install @m1heng-clawd/feishu || true
+RUN timeout 300 openclaw plugins install @m1heng-clawd/feishu || true
 
 # 安装钉钉插件 - 使用 timeout 防止卡住，忽略错误继续构建
 # RUN timeout 300 openclaw plugins install https://github.com/soimy/clawdbot-channel-dingtalk.git || true
