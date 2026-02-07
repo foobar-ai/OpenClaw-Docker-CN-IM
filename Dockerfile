@@ -41,24 +41,30 @@ RUN npm install -g @steipete/bird
 # 创建配置目录并设置权限
 RUN mkdir -p /home/node/.openclaw/workspace && \
     chown -R node:node /home/node
+    
+# zeabur auth fix Add this line before your CMD or ENTRYPOINT  
+RUN mkdir -p /home/node/.openclaw/agents/main/sessions && \  
+    chown -R node:node /home/node/.openclaw && \  
+    chmod -R 755 /home/node/.openclaw  
+
 
 # 切换到 node 用户安装插件
 USER node
 
 # 安装飞书插件 - 使用 timeout 防止卡住，忽略错误继续构建
-RUN timeout 300 openclaw plugins install @m1heng-clawd/feishu || true
+# RUN timeout 300 openclaw plugins install @m1heng-clawd/feishu || true
 
 # 安装钉钉插件 - 使用 timeout 防止卡住，忽略错误继续构建
-RUN timeout 300 openclaw plugins install https://github.com/soimy/clawdbot-channel-dingtalk.git || true
+# RUN timeout 300 openclaw plugins install https://github.com/soimy/clawdbot-channel-dingtalk.git || true
 
 # 安装 QQ 机器人插件 - 使用 timeout 防止卡住，忽略错误继续构建
-RUN cd /tmp && \
-    git clone https://github.com/justlovemaki/qqbot.git && \
-    cd qqbot && \
-    timeout 300 openclaw plugins install . || true
+# RUN cd /tmp && \
+#     git clone https://github.com/justlovemaki/qqbot.git && \
+#     cd qqbot && \
+#     timeout 300 openclaw plugins install . || true
 
 # 安装企业微信插件 - 使用 timeout 防止卡住，忽略错误继续构建
-RUN timeout 300 openclaw plugins install openclaw-plugin-wecom || true
+# RUN timeout 300 openclaw plugins install openclaw-plugin-wecom || true
 
 # 切换回 root 用户继续后续操作
 USER root
