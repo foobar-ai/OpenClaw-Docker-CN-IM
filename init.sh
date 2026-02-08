@@ -280,6 +280,7 @@ EOF
     # 关闭 entries 对象
     cat >> /home/node/.openclaw/openclaw.json <<EOF
     },
+    "installs": {
 EOF
 
     # 添加钉钉插件安装信息（如果提供了 CLIENT_ID 和 CLIENT_SECRET）

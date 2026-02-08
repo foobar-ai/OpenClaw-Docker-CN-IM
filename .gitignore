@@ -1,0 +1,16 @@
+
+.idea/
+*.class
+*.java~
+.history/
+*.swp
+.pytest_cache/
+__pycache__/
+.scratch
+*.beam
+.DS_Store
+venv/
+generated/
+.opencode
+.env
+

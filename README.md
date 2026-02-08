@@ -88,6 +88,11 @@ docker-compose logs -f
 docker-compose down
 ```
 
+### 6. 进入容器
+```bash
+docker compose exec openclaw-gateway /bin/bash
+```
+
 ---
 
 ## 配置指南
